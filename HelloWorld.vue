@@ -10,7 +10,7 @@ const step = 1;
   <div class="card">
     <p>
       Ce guide vous permettra d'en savoir plus et de vous expliquer comment installer une PWA.
-      <hr>
+
       Tout d'abord, voici les prérequis :
       <ul>
         <li>Avoir un navigateur qui prends en charge les PWA comme Google Chrome, Firefox, Edge ou Safari.</li>
@@ -18,11 +18,9 @@ const step = 1;
         <li>Il faut que le site en question permette l'installation d'une PWA.</li>
       </ul>
     </p>
-    <hr>
     <p>
       Pour installer une PWA, cela depend de votre navigateur. Le plus souvent, il y a une flèche "Installer" et ensuite il y a juste à suivre les instructions.
     </p>
-    <hr>
     <p>
       Si vous êtes sur cette page, c'est que vous avez déjà entendu parler des PWA. Ces applications ont plusieurs atouts :
       <ul >
@@ -34,9 +32,8 @@ const step = 1;
         <li>Elles permettent d'utiliser des fonctionnalités de l'appareil comme les notifications, le vibreur et autres.</li>
       </ul>
     </p>
-    <hr>
     <p>
-      En conclusion, il peut être intéressant de mettre en place des PWA pour des applications souvent utilisés sur mobile ! 😍
+      En conclusion, les PWA c'est génial ! 😍
     </p>
   </div>
 </template>
