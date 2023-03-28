@@ -1,0 +1,20 @@
+WorkBox
+
+1) La librairie WorkBox offrent pas mal de fonctionnalités : 
+    - Elle propose une liste de méthodes utilitaires permettant d’implémenter des stratégies de mise en cache et tout ce qui y est lié, comme la gestion du cache, le préchargement de fichiers, la gestion des erreurs ou la mise à jour.
+    - Elle permet de générer des manifestes pour aider à l'installation des pwa
+    - Elle s'intégre avec pas mal d'autres outils (Webpack ou gulp) pour faciliter le processus de création et de déploiement d'une pwa
+    - Elle a un système de gestion de mise à jour pour le service worker
+
+2) Il y a différente méthodes de mise en cache :
+    - networkFirst : essaie de lancer la requête en mode connecté. Si la requête fonctionne, il stocke la réponse en cache. Si ca ne fonctionne pas, il cherche dans le cache et envoie la réponse => A utiliser pour avoir les données les plus récentes
+    - cacheFirst : envoie direct la ressource du cache si elle est présente sinon on charge la ressource => A garder pour les données qui ne changent pas
+    - cacheOnly : envoie direct la ressource du cache si elle est présente sinon erreur => A utiliser pour de l'économie de ressources sur des usages pas très important ou sur mobile.
+    - networkOnly : interroge directement le réseau => On perd l'utilité du service worker
+    - staleWhileRevalidate : envoie 2 requêtes en parallèle (une dans le cache et une dans le réseau). La version du cache est affiché puis remplacé par la réponse du réseau (si pas d'erreur)
+
+3) Pour moi, il serais intéressant d'intégrer un cache en mode staleWhileRevalidate pour la partie agenda de l'application doctoliberal. Cela permettrai d'avoir les rendez-vous tout le temps à jour.
+On pourrai aussi utiliser workbox-build pour nous permettre d'avoir un cache pour les professionnels disponible (pas besoin de les récupérer tout le temps, uniquement au lancement de l'appli).
+Enfin j'implementerai workbox-background-sync qui permettrait de palier à une perte de réseau, qui peut facilement arriver sur mobile, pour pouvoir garantir la bonne prise en compte des rdvs
+
+
